@@ -67,7 +67,6 @@ def add_mark(imgFile, txtMark):
 	fileDir = os.path.dirname(imgFile) + '_' + txtMark
 	fileName = os.path.join(fileDir, os.path.basename(imgFile))
 	waterImage.save(fileName,'png')
-	print('水印完成')
 
 #合并输出PDF
 def topdf(path,recursion=None,pictureType=None,sizeMode=None,width=None,height=None,fit=None,save=None):
@@ -169,7 +168,8 @@ for fn in (fns for fns in os.listdir(ppt_dir) if fns.endswith(('.ppt','.pptx')))
 		os.makedirs(img_dir + '_' + markText.strip('\n'), exist_ok=True)
 		for imgFile in imgFileList:
 			add_mark(imgFile, markText.strip('\n'))
-			print("完成PDF合成")
+		print('水印完成')
 		markDir = img_dir + '_' + markText.strip('\n')
 		topdf(path=markDir, save=ppt_dir)
+		print("完成PDF合成")
 		shutil.rmtree(markDir)
