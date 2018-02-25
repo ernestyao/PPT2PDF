@@ -4,7 +4,7 @@ Automatically convert a PPT/PPTX to PNG files and combine them to a PDF after ap
 Then every page of the PDF is an image. It could not be copied or converted back to PPT/PPTX.
 Watermark texts should be in watermark.txt and this script watermarks every PPT/PPTX in the same folder where the script locates.
 
-PyWin32, Pillow, reportlab, is needed. With this development, Pywin32 2.2.2, Pillow 5.0.0, reportlab 3.4.0 are used.
+PyWin32, Pillow, reportlab, is needed. With this development, Pywin32 222, Pillow 5.0.0, reportlab 3.4.0 are used.
 And so the script works on Windows only. Windows 10 64bit is used with development.
 
 @author: ern
