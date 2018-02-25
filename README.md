@@ -16,5 +16,6 @@ Usage: Put the script, watermark.txt and the PPT/PPTX file in the same folder an
 使用：把脚本、watermark.txt 和 PPT/PPTX 放在同一个目录下，打开命令行窗口运行 `python PPT2PDF.py`
 
 @author: ern
+
 @blog: www.readern.com
 
