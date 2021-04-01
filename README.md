@@ -13,6 +13,7 @@ And so the script works on Windows only. Windows 10 64bit is used with developme
 需要使用 PyWin32、Pillow、reportlab 三个包。开发时用了Pywin32 222, Pillow 5.0.0, reportlab 3.4.0。所以脚本只能在 Windows 下使用，开发环境为64位的Windows 10.
 
 Usage: Put the script, watermark.txt and the PPT/PPTX file in the same folder and then open command line window: `python PPT2PDF.py`
+
 使用：把脚本、watermark.txt 和 PPT/PPTX 放在同一个目录下，打开命令行窗口运行 `python PPT2PDF.py`
 
 @author: ern
