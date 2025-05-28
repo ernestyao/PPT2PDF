@@ -1,2 +1,1 @@
-测试水印
-Test Watermark
+Training PRO
