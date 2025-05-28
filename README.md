@@ -1,22 +1,57 @@
-# PPT2PDF
+# PPT2PNG
 
-Automatically convert a PPT/PPTX to PNG files and combine them to a PDF after applying watermark.
-Then every page of the PDF is an image. It could not be copied or converted back to PPT/PPTX.
-Watermark texts should be in watermark.txt and this script watermarks every PPT/PPTX in the same folder where the script locates.
+A simple Python script to convert PowerPoint presentations (.ppt/.pptx) to PNG images.
 
-这个 Python 3 脚本自动将PPT/PPTX文件转换成PNG图片、打水印并重新合并成PDF文件。因此PDF文件都是图片构成，一般无法拷贝或无损转换回PPT/PPTX
-水印是文本形式写在watermark.txt中，对每一行生成一个水印版PDF。脚本自动获取同文件夹下所有PPT/PPTX文件。
+## Description
 
-PyWin32, Pillow, reportlab, is needed. With this development, Pywin32 222, Pillow 5.0.0, reportlab 3.4.0 are used.
-And so the script works on Windows only. Windows 10 64bit is used with development.
+This tool automatically converts PowerPoint presentations to individual PNG images, with each slide saved as a separate image. The images are stored in a folder with the same name as the original PowerPoint file.
 
-需要使用 PyWin32、Pillow、reportlab 三个包。开发时用了Pywin32 222, Pillow 5.0.0, reportlab 3.4.0。所以脚本只能在 Windows 下使用，开发环境为64位的Windows 10.
+## Requirements
 
-Usage: Put the script, watermark.txt and the PPT/PPTX file in the same folder and then open command line window: `python PPT2PDF.py`
+### System Requirements
+- Windows operating system (tested on Windows 10)
+- Microsoft PowerPoint installed
 
-使用：把脚本、watermark.txt 和 PPT/PPTX 放在同一个目录下，打开命令行窗口运行 `python PPT2PDF.py`
+### Python Requirements
+- Python 3.x
+- PyWin32 library
 
-@author: ern
+## Installation
 
-@blog: www.readern.com
+1. Make sure you have Python 3 installed on your system. You can download it from [python.org](https://www.python.org/downloads/)
 
+2. Install the required PyWin32 library:
+   ```
+   pip install pywin32
+   ```
+
+## Usage
+
+1. Place your PowerPoint files (.ppt or .pptx) in the same folder as the script.
+
+2. Open Command Prompt or PowerShell, navigate to the folder containing the script, and run:
+   ```
+   python PPT2PNG.py
+   ```
+
+3. The script will:
+   - Find all PowerPoint files in the current directory
+   - Convert each presentation to PNG images
+   - Create a folder for each presentation with the same name as the PowerPoint file
+   - Save all slides as PNG images in their respective folders
+
+## Example
+
+If you have a file named `presentation.pptx`, after running the script:
+- A folder named `presentation` will be created
+- All slides will be saved as PNG images in that folder (Slide1.PNG, Slide2.PNG, etc.)
+
+## Troubleshooting
+
+- **No images generated**: Ensure that PowerPoint is properly installed and can be accessed by Python.
+- **Script crashes**: Make sure you have the PyWin32 library installed. Run `pip install pywin32` if you haven't already.
+- **Access denied errors**: Try running the command prompt as administrator.
+
+## Credits
+
+This script is a simplified version of PPT2PDF by ern (www.readern.com), modified to focus solely on PowerPoint to PNG conversion.
