@@ -45,8 +45,17 @@ def add_mark(imgFile, txtMark):
 	textImgH = int(imgHeight * 1.5)
 	blank = Image.new("RGB",(textImgW,textImgH),"white")  #创建用于添加文字的空白图像
 	d = ImageDraw.Draw(blank)
-	d.ink = 0 + 0 * 256 + 0 * 256 * 256 
-	markFont = ImageFont.truetype('simhei.ttf', size=180)
+	d.ink = 0 + 0 * 256 + 0 * 256 * 256 	try:
+		# Try SimHei first (for Chinese characters)
+		markFont = ImageFont.truetype('simhei.ttf', size=180)
+	except OSError:
+		try:
+			# Fall back to Arial which is commonly available on Windows
+			markFont = ImageFont.truetype('arial.ttf', size=180)
+		except OSError:
+			# Last resort - use default font
+			markFont = ImageFont.load_default()
+			print("Warning: Using default font as neither SimHei nor Arial was found")
 	fontWidth, fontHeight = markFont.getsize(txtMark)
 	d.text(((textImgW - fontWidth)/2, (textImgH - fontHeight)/2), txtMark, font=markFont)
 	textRotate = blank.rotate(30)
